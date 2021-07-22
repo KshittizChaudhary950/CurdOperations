@@ -154,6 +154,7 @@ namespace CurdOperations
             this.Update.TabIndex = 8;
             this.Update.Text = "Update";
             this.Update.UseVisualStyleBackColor = true;
+            this.Update.Click += new System.EventHandler(this.Update_Click);
             // 
             // Deletebtn
             // 
@@ -163,6 +164,7 @@ namespace CurdOperations
             this.Deletebtn.TabIndex = 9;
             this.Deletebtn.Text = "Delete";
             this.Deletebtn.UseVisualStyleBackColor = true;
+            this.Deletebtn.Click += new System.EventHandler(this.Deletebtn_Click);
             // 
             // viewBtn
             // 
