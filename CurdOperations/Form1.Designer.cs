@@ -38,9 +38,6 @@ namespace CurdOperations
             this.label7 = new System.Windows.Forms.Label();
             this.IDtextBox = new System.Windows.Forms.TextBox();
             this.NametextBox = new System.Windows.Forms.TextBox();
-            this.Gendertextbox = new System.Windows.Forms.TextBox();
-            this.agetextBox = new System.Windows.Forms.TextBox();
-            this.PositiontextBox = new System.Windows.Forms.TextBox();
             this.SalarytextBox = new System.Windows.Forms.TextBox();
             this.InsertBtn = new System.Windows.Forms.Button();
             this.Update = new System.Windows.Forms.Button();
@@ -48,7 +45,11 @@ namespace CurdOperations
             this.viewBtn = new System.Windows.Forms.Button();
             this.Resetbtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.GendercomboBox = new System.Windows.Forms.ComboBox();
+            this.PositioncomboBox = new System.Windows.Forms.ComboBox();
+            this.AgenumericUpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AgenumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -119,58 +120,38 @@ namespace CurdOperations
             this.IDtextBox.Location = new System.Drawing.Point(89, 59);
             this.IDtextBox.Name = "IDtextBox";
             this.IDtextBox.Size = new System.Drawing.Size(152, 20);
-            this.IDtextBox.TabIndex = 2;
+            this.IDtextBox.TabIndex = 0;
             // 
             // NametextBox
             // 
             this.NametextBox.Location = new System.Drawing.Point(89, 87);
             this.NametextBox.Name = "NametextBox";
             this.NametextBox.Size = new System.Drawing.Size(152, 20);
-            this.NametextBox.TabIndex = 2;
-            // 
-            // Gendertextbox
-            // 
-            this.Gendertextbox.Location = new System.Drawing.Point(89, 113);
-            this.Gendertextbox.Name = "Gendertextbox";
-            this.Gendertextbox.Size = new System.Drawing.Size(152, 20);
-            this.Gendertextbox.TabIndex = 2;
-            // 
-            // agetextBox
-            // 
-            this.agetextBox.Location = new System.Drawing.Point(89, 147);
-            this.agetextBox.Name = "agetextBox";
-            this.agetextBox.Size = new System.Drawing.Size(152, 20);
-            this.agetextBox.TabIndex = 2;
-            // 
-            // PositiontextBox
-            // 
-            this.PositiontextBox.Location = new System.Drawing.Point(89, 183);
-            this.PositiontextBox.Name = "PositiontextBox";
-            this.PositiontextBox.Size = new System.Drawing.Size(152, 20);
-            this.PositiontextBox.TabIndex = 2;
+            this.NametextBox.TabIndex = 1;
             // 
             // SalarytextBox
             // 
             this.SalarytextBox.Location = new System.Drawing.Point(89, 227);
             this.SalarytextBox.Name = "SalarytextBox";
             this.SalarytextBox.Size = new System.Drawing.Size(152, 20);
-            this.SalarytextBox.TabIndex = 2;
+            this.SalarytextBox.TabIndex = 5;
             // 
             // InsertBtn
             // 
             this.InsertBtn.Location = new System.Drawing.Point(276, 67);
             this.InsertBtn.Name = "InsertBtn";
             this.InsertBtn.Size = new System.Drawing.Size(75, 23);
-            this.InsertBtn.TabIndex = 3;
+            this.InsertBtn.TabIndex = 7;
             this.InsertBtn.Text = "Insert";
             this.InsertBtn.UseVisualStyleBackColor = true;
+            this.InsertBtn.Click += new System.EventHandler(this.InsertBtn_Click);
             // 
             // Update
             // 
             this.Update.Location = new System.Drawing.Point(276, 110);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(75, 23);
-            this.Update.TabIndex = 3;
+            this.Update.TabIndex = 8;
             this.Update.Text = "Update";
             this.Update.UseVisualStyleBackColor = true;
             // 
@@ -179,7 +160,7 @@ namespace CurdOperations
             this.Deletebtn.Location = new System.Drawing.Point(276, 140);
             this.Deletebtn.Name = "Deletebtn";
             this.Deletebtn.Size = new System.Drawing.Size(75, 23);
-            this.Deletebtn.TabIndex = 3;
+            this.Deletebtn.TabIndex = 9;
             this.Deletebtn.Text = "Delete";
             this.Deletebtn.UseVisualStyleBackColor = true;
             // 
@@ -188,7 +169,7 @@ namespace CurdOperations
             this.viewBtn.Location = new System.Drawing.Point(276, 176);
             this.viewBtn.Name = "viewBtn";
             this.viewBtn.Size = new System.Drawing.Size(75, 23);
-            this.viewBtn.TabIndex = 3;
+            this.viewBtn.TabIndex = 10;
             this.viewBtn.Text = "View";
             this.viewBtn.UseVisualStyleBackColor = true;
             // 
@@ -197,7 +178,7 @@ namespace CurdOperations
             this.Resetbtn.Location = new System.Drawing.Point(276, 222);
             this.Resetbtn.Name = "Resetbtn";
             this.Resetbtn.Size = new System.Drawing.Size(75, 23);
-            this.Resetbtn.TabIndex = 3;
+            this.Resetbtn.TabIndex = 11;
             this.Resetbtn.Text = "Reset";
             this.Resetbtn.UseVisualStyleBackColor = true;
             // 
@@ -207,13 +188,39 @@ namespace CurdOperations
             this.dataGridView1.Location = new System.Drawing.Point(12, 271);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(529, 167);
-            this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.TabIndex = 13;
+            // 
+            // GendercomboBox
+            // 
+            this.GendercomboBox.FormattingEnabled = true;
+            this.GendercomboBox.Location = new System.Drawing.Point(89, 113);
+            this.GendercomboBox.Name = "GendercomboBox";
+            this.GendercomboBox.Size = new System.Drawing.Size(152, 21);
+            this.GendercomboBox.TabIndex = 14;
+            // 
+            // PositioncomboBox
+            // 
+            this.PositioncomboBox.FormattingEnabled = true;
+            this.PositioncomboBox.Location = new System.Drawing.Point(89, 183);
+            this.PositioncomboBox.Name = "PositioncomboBox";
+            this.PositioncomboBox.Size = new System.Drawing.Size(152, 21);
+            this.PositioncomboBox.TabIndex = 15;
+            // 
+            // AgenumericUpDown
+            // 
+            this.AgenumericUpDown.Location = new System.Drawing.Point(90, 148);
+            this.AgenumericUpDown.Name = "AgenumericUpDown";
+            this.AgenumericUpDown.Size = new System.Drawing.Size(151, 20);
+            this.AgenumericUpDown.TabIndex = 16;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 450);
+            this.Controls.Add(this.AgenumericUpDown);
+            this.Controls.Add(this.PositioncomboBox);
+            this.Controls.Add(this.GendercomboBox);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Resetbtn);
             this.Controls.Add(this.viewBtn);
@@ -221,9 +228,6 @@ namespace CurdOperations
             this.Controls.Add(this.Update);
             this.Controls.Add(this.InsertBtn);
             this.Controls.Add(this.SalarytextBox);
-            this.Controls.Add(this.PositiontextBox);
-            this.Controls.Add(this.agetextBox);
-            this.Controls.Add(this.Gendertextbox);
             this.Controls.Add(this.NametextBox);
             this.Controls.Add(this.IDtextBox);
             this.Controls.Add(this.label7);
@@ -234,8 +238,10 @@ namespace CurdOperations
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AgenumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,9 +258,6 @@ namespace CurdOperations
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox IDtextBox;
         private System.Windows.Forms.TextBox NametextBox;
-        private System.Windows.Forms.TextBox Gendertextbox;
-        private System.Windows.Forms.TextBox agetextBox;
-        private System.Windows.Forms.TextBox PositiontextBox;
         private System.Windows.Forms.TextBox SalarytextBox;
         private System.Windows.Forms.Button InsertBtn;
         private System.Windows.Forms.Button Update;
@@ -262,6 +265,9 @@ namespace CurdOperations
         private System.Windows.Forms.Button viewBtn;
         private System.Windows.Forms.Button Resetbtn;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox GendercomboBox;
+        private System.Windows.Forms.ComboBox PositioncomboBox;
+        private System.Windows.Forms.NumericUpDown AgenumericUpDown;
     }
 }
 

@@ -1,0 +1,10 @@
+D:\by ownlearning\CurdOperations\CurdOperations\bin\Debug\CurdOperations.exe.config
+D:\by ownlearning\CurdOperations\CurdOperations\bin\Debug\CurdOperations.exe
+D:\by ownlearning\CurdOperations\CurdOperations\bin\Debug\CurdOperations.pdb
+D:\by ownlearning\CurdOperations\CurdOperations\obj\Debug\CurdOperations.csproj.AssemblyReference.cache
+D:\by ownlearning\CurdOperations\CurdOperations\obj\Debug\CurdOperations.Form1.resources
+D:\by ownlearning\CurdOperations\CurdOperations\obj\Debug\CurdOperations.Properties.Resources.resources
+D:\by ownlearning\CurdOperations\CurdOperations\obj\Debug\CurdOperations.csproj.GenerateResource.cache
+D:\by ownlearning\CurdOperations\CurdOperations\obj\Debug\CurdOperations.csproj.CoreCompileInputs.cache
+D:\by ownlearning\CurdOperations\CurdOperations\obj\Debug\CurdOperations.exe
+D:\by ownlearning\CurdOperations\CurdOperations\obj\Debug\CurdOperations.pdb

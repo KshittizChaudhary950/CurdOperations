@@ -7,14 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace CurdOperations
 {
     public partial class Form1 : Form
     {
+        string cs = ConfigurationManager.ConnectionStrings["dbcs"].ConnectionString;
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void InsertBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
