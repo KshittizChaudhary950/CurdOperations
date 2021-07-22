@@ -31,7 +31,7 @@ namespace CurdOperations
            SqlDataReader dr= cmd2.ExecuteReader();
             if (dr.HasRows)
             {
-                MessageBox.Show(IDtextBox.Text + "is already exists", "Faliure", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(IDtextBox.Text + " is already exists in record", "Faliure", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 con.Close();
 
             }
@@ -111,13 +111,22 @@ namespace CurdOperations
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            IDtextBox.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-           NametextBox.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            try
+            {
+                IDtextBox.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                NametextBox.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
 
-            GendercomboBox.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
-            AgenumericUpDown.Value =Convert.ToInt32( dataGridView1.SelectedRows[0].Cells[3].Value);
-            PositioncomboBox.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
-            SalarytextBox.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
+                GendercomboBox.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+                AgenumericUpDown.Value = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[3].Value);
+                PositioncomboBox.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+                SalarytextBox.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Please select in id row");
+            }
+       
         }
 
         private void Update_Click(object sender, EventArgs e)
@@ -218,6 +227,92 @@ namespace CurdOperations
             GendercomboBox.SelectedItem=null ;
             AgenumericUpDown.Value=0;
             PositioncomboBox.SelectedItem=null;
+            SalarytextBox.Clear();
+            IDtextBox.Focus();
+        }
+
+        private void Searchbtn_Click(object sender, EventArgs e)
+        {
+            if(SearchtextBox.Text!="")
+            {
+                // working on search
+                SqlConnection con = new SqlConnection(cs);
+                string query = "select*from Employee where name like @name + '%'";
+                SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                sda.SelectCommand.Parameters.AddWithValue("@name", SearchtextBox.Text.Trim());
+
+                DataTable data = new DataTable();
+                sda.Fill(data);
+
+                if(data.Rows.Count>0)
+                {
+                    dataGridView1.DataSource = data;
+
+                }
+                else
+                {
+                    MessageBox.Show("No data is found");
+                    dataGridView1.DataSource = null;
+                }
+
+                SearchtextBox.Clear();
+
+
+
+            }
+
+            else
+            {
+
+                MessageBox.Show("Please enter some value to search !!");
+
+            }
+
+        }
+
+        private void SearchtextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (SearchtextBox.Text != "")
+            {
+                // auto generated in text bar search
+                SqlConnection con = new SqlConnection(cs);
+                string query = "select*from Employee where name like @name + '%'";
+                SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                sda.SelectCommand.Parameters.AddWithValue("@name", SearchtextBox.Text.Trim());
+
+                DataTable data = new DataTable();
+                sda.Fill(data);
+
+                if (data.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = data;
+
+                }
+                else
+                {
+                  
+                    dataGridView1.DataSource = null;
+                }
+
+
+            }
+            else
+            {
+                SearchtextBox.Focus();
+            }
+
+        
+
+        }
+
+        private void Resetbtn_Click(object sender, EventArgs e)
+        {
+            SearchtextBox.Clear();
+            IDtextBox.Clear();
+            NametextBox.Clear();
+            GendercomboBox.SelectedItem = null;
+            AgenumericUpDown.Value = 0;
+            PositioncomboBox.SelectedItem = null;
             SalarytextBox.Clear();
             IDtextBox.Focus();
         }

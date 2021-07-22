@@ -48,6 +48,8 @@ namespace CurdOperations
             this.GendercomboBox = new System.Windows.Forms.ComboBox();
             this.PositioncomboBox = new System.Windows.Forms.ComboBox();
             this.AgenumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.SearchtextBox = new System.Windows.Forms.TextBox();
+            this.Searchbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AgenumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +57,7 @@ namespace CurdOperations
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(124, 19);
+            this.label1.Location = new System.Drawing.Point(398, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 13);
             this.label1.TabIndex = 0;
@@ -117,30 +119,30 @@ namespace CurdOperations
             // 
             // IDtextBox
             // 
-            this.IDtextBox.Location = new System.Drawing.Point(89, 59);
+            this.IDtextBox.Location = new System.Drawing.Point(90, 59);
             this.IDtextBox.Name = "IDtextBox";
-            this.IDtextBox.Size = new System.Drawing.Size(152, 20);
+            this.IDtextBox.Size = new System.Drawing.Size(219, 20);
             this.IDtextBox.TabIndex = 0;
             // 
             // NametextBox
             // 
             this.NametextBox.Location = new System.Drawing.Point(89, 87);
             this.NametextBox.Name = "NametextBox";
-            this.NametextBox.Size = new System.Drawing.Size(152, 20);
+            this.NametextBox.Size = new System.Drawing.Size(220, 20);
             this.NametextBox.TabIndex = 1;
             // 
             // SalarytextBox
             // 
-            this.SalarytextBox.Location = new System.Drawing.Point(89, 227);
+            this.SalarytextBox.Location = new System.Drawing.Point(89, 224);
             this.SalarytextBox.Name = "SalarytextBox";
-            this.SalarytextBox.Size = new System.Drawing.Size(152, 20);
+            this.SalarytextBox.Size = new System.Drawing.Size(220, 20);
             this.SalarytextBox.TabIndex = 5;
             // 
             // InsertBtn
             // 
-            this.InsertBtn.Location = new System.Drawing.Point(276, 67);
+            this.InsertBtn.Location = new System.Drawing.Point(354, 59);
             this.InsertBtn.Name = "InsertBtn";
-            this.InsertBtn.Size = new System.Drawing.Size(75, 23);
+            this.InsertBtn.Size = new System.Drawing.Size(69, 23);
             this.InsertBtn.TabIndex = 7;
             this.InsertBtn.Text = "Insert";
             this.InsertBtn.UseVisualStyleBackColor = true;
@@ -148,9 +150,9 @@ namespace CurdOperations
             // 
             // Update
             // 
-            this.Update.Location = new System.Drawing.Point(276, 110);
+            this.Update.Location = new System.Drawing.Point(354, 89);
             this.Update.Name = "Update";
-            this.Update.Size = new System.Drawing.Size(75, 23);
+            this.Update.Size = new System.Drawing.Size(69, 23);
             this.Update.TabIndex = 8;
             this.Update.Text = "Update";
             this.Update.UseVisualStyleBackColor = true;
@@ -158,9 +160,9 @@ namespace CurdOperations
             // 
             // Deletebtn
             // 
-            this.Deletebtn.Location = new System.Drawing.Point(276, 140);
+            this.Deletebtn.Location = new System.Drawing.Point(354, 140);
             this.Deletebtn.Name = "Deletebtn";
-            this.Deletebtn.Size = new System.Drawing.Size(75, 23);
+            this.Deletebtn.Size = new System.Drawing.Size(69, 23);
             this.Deletebtn.TabIndex = 9;
             this.Deletebtn.Text = "Delete";
             this.Deletebtn.UseVisualStyleBackColor = true;
@@ -168,9 +170,9 @@ namespace CurdOperations
             // 
             // viewBtn
             // 
-            this.viewBtn.Location = new System.Drawing.Point(276, 176);
+            this.viewBtn.Location = new System.Drawing.Point(354, 217);
             this.viewBtn.Name = "viewBtn";
-            this.viewBtn.Size = new System.Drawing.Size(75, 23);
+            this.viewBtn.Size = new System.Drawing.Size(69, 23);
             this.viewBtn.TabIndex = 10;
             this.viewBtn.Text = "View";
             this.viewBtn.UseVisualStyleBackColor = true;
@@ -178,19 +180,20 @@ namespace CurdOperations
             // 
             // Resetbtn
             // 
-            this.Resetbtn.Location = new System.Drawing.Point(276, 222);
+            this.Resetbtn.Location = new System.Drawing.Point(352, 181);
             this.Resetbtn.Name = "Resetbtn";
-            this.Resetbtn.Size = new System.Drawing.Size(75, 23);
+            this.Resetbtn.Size = new System.Drawing.Size(71, 23);
             this.Resetbtn.TabIndex = 11;
             this.Resetbtn.Text = "Reset";
             this.Resetbtn.UseVisualStyleBackColor = true;
+            this.Resetbtn.Click += new System.EventHandler(this.Resetbtn_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 271);
+            this.dataGridView1.Location = new System.Drawing.Point(21, 251);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(529, 167);
+            this.dataGridView1.Size = new System.Drawing.Size(668, 195);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
@@ -204,7 +207,7 @@ namespace CurdOperations
             "Female"});
             this.GendercomboBox.Location = new System.Drawing.Point(89, 113);
             this.GendercomboBox.Name = "GendercomboBox";
-            this.GendercomboBox.Size = new System.Drawing.Size(152, 21);
+            this.GendercomboBox.Size = new System.Drawing.Size(220, 21);
             this.GendercomboBox.TabIndex = 3;
             // 
             // PositioncomboBox
@@ -219,7 +222,7 @@ namespace CurdOperations
             "Student"});
             this.PositioncomboBox.Location = new System.Drawing.Point(89, 183);
             this.PositioncomboBox.Name = "PositioncomboBox";
-            this.PositioncomboBox.Size = new System.Drawing.Size(152, 21);
+            this.PositioncomboBox.Size = new System.Drawing.Size(220, 21);
             this.PositioncomboBox.TabIndex = 5;
             // 
             // AgenumericUpDown
@@ -231,14 +234,34 @@ namespace CurdOperations
             0,
             0});
             this.AgenumericUpDown.Name = "AgenumericUpDown";
-            this.AgenumericUpDown.Size = new System.Drawing.Size(151, 20);
+            this.AgenumericUpDown.Size = new System.Drawing.Size(219, 20);
             this.AgenumericUpDown.TabIndex = 4;
+            // 
+            // SearchtextBox
+            // 
+            this.SearchtextBox.Location = new System.Drawing.Point(429, 220);
+            this.SearchtextBox.Name = "SearchtextBox";
+            this.SearchtextBox.Size = new System.Drawing.Size(171, 20);
+            this.SearchtextBox.TabIndex = 14;
+            this.SearchtextBox.TextChanged += new System.EventHandler(this.SearchtextBox_TextChanged);
+            // 
+            // Searchbtn
+            // 
+            this.Searchbtn.Location = new System.Drawing.Point(627, 220);
+            this.Searchbtn.Name = "Searchbtn";
+            this.Searchbtn.Size = new System.Drawing.Size(62, 23);
+            this.Searchbtn.TabIndex = 15;
+            this.Searchbtn.Text = "Search";
+            this.Searchbtn.UseVisualStyleBackColor = true;
+            this.Searchbtn.Click += new System.EventHandler(this.Searchbtn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 450);
+            this.ClientSize = new System.Drawing.Size(715, 458);
+            this.Controls.Add(this.Searchbtn);
+            this.Controls.Add(this.SearchtextBox);
             this.Controls.Add(this.AgenumericUpDown);
             this.Controls.Add(this.PositioncomboBox);
             this.Controls.Add(this.GendercomboBox);
@@ -289,6 +312,8 @@ namespace CurdOperations
         private System.Windows.Forms.ComboBox GendercomboBox;
         private System.Windows.Forms.ComboBox PositioncomboBox;
         private System.Windows.Forms.NumericUpDown AgenumericUpDown;
+        private System.Windows.Forms.TextBox SearchtextBox;
+        private System.Windows.Forms.Button Searchbtn;
     }
 }
 
