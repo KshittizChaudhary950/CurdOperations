@@ -55,7 +55,7 @@ namespace CurdOperations
                 cmd.Parameters.AddWithValue("@position", PositioncomboBox.Text);
                 cmd.Parameters.AddWithValue("@salary", SalarytextBox.Text);
 
-               // con.Open();
+                con.Open();
 
 
 
