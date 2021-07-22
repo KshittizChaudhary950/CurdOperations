@@ -31,7 +31,7 @@ namespace CurdOperations
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.IDlabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -70,14 +70,14 @@ namespace CurdOperations
             this.label2.TabIndex = 1;
             this.label2.Text = "Name";
             // 
-            // label3
+            // IDlabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 67);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(18, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "ID";
+            this.IDlabel.AutoSize = true;
+            this.IDlabel.Location = new System.Drawing.Point(18, 67);
+            this.IDlabel.Name = "IDlabel";
+            this.IDlabel.Size = new System.Drawing.Size(18, 13);
+            this.IDlabel.TabIndex = 1;
+            this.IDlabel.Text = "ID";
             // 
             // label4
             // 
@@ -172,6 +172,7 @@ namespace CurdOperations
             this.viewBtn.TabIndex = 10;
             this.viewBtn.Text = "View";
             this.viewBtn.UseVisualStyleBackColor = true;
+            this.viewBtn.Click += new System.EventHandler(this.viewBtn_Click);
             // 
             // Resetbtn
             // 
@@ -189,29 +190,47 @@ namespace CurdOperations
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(529, 167);
             this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
             // GendercomboBox
             // 
+            this.GendercomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.GendercomboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.GendercomboBox.FormattingEnabled = true;
+            this.GendercomboBox.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
             this.GendercomboBox.Location = new System.Drawing.Point(89, 113);
             this.GendercomboBox.Name = "GendercomboBox";
             this.GendercomboBox.Size = new System.Drawing.Size(152, 21);
-            this.GendercomboBox.TabIndex = 14;
+            this.GendercomboBox.TabIndex = 3;
             // 
             // PositioncomboBox
             // 
+            this.PositioncomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.PositioncomboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.PositioncomboBox.FormattingEnabled = true;
+            this.PositioncomboBox.Items.AddRange(new object[] {
+            "Accountant ",
+            "Admistrator",
+            "Teacher",
+            "Student"});
             this.PositioncomboBox.Location = new System.Drawing.Point(89, 183);
             this.PositioncomboBox.Name = "PositioncomboBox";
             this.PositioncomboBox.Size = new System.Drawing.Size(152, 21);
-            this.PositioncomboBox.TabIndex = 15;
+            this.PositioncomboBox.TabIndex = 5;
             // 
             // AgenumericUpDown
             // 
             this.AgenumericUpDown.Location = new System.Drawing.Point(90, 148);
+            this.AgenumericUpDown.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.AgenumericUpDown.Name = "AgenumericUpDown";
             this.AgenumericUpDown.Size = new System.Drawing.Size(151, 20);
-            this.AgenumericUpDown.TabIndex = 16;
+            this.AgenumericUpDown.TabIndex = 4;
             // 
             // Form1
             // 
@@ -234,7 +253,7 @@ namespace CurdOperations
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.IDlabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
@@ -251,7 +270,7 @@ namespace CurdOperations
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label IDlabel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
